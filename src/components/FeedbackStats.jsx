@@ -4,7 +4,10 @@ import FeedbackContext from '../context/FeedbackContext'
 function FeedbackStats() {
     const {feedback} = useContext(FeedbackContext)
     let rating = 0;
-    feedback.forEach(item=>rating=rating+item.rating)
+    feedback.forEach(item=>{
+
+        rating=rating+Number(item.rating)
+    })
     rating = (rating/feedback.length).toFixed(1).replace(/[.,]0$/,'')
 
 return (
